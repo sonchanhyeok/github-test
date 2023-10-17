@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset='utf-8' />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js"></script>
+<!-- <script src="js/index.global.min.js"></script> -->
+
+<!-- Core CSS -->
+<link rel="stylesheet" th:href="@{/assets/vendor/css/core.css}" />
+<link rel="stylesheet" th:href="@{/assets/vendor/css/theme-default.css}" />
+<script src="js/calendar.js"></script>
+	
+</head>
+<body>
+
+	<div id="calender-container">
+		<div id='calendar'></div>
+	</div>
+
+
+	<!-- Modal -->
+	<div class="modal fade" id="backDropModal" data-bs-backdrop="static" tabindex="-1">
+		<div class="modal-dialog">
+			<form class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="backDropModalTitle">일정 추가</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col mb-3">
+							<label for="nameBackdrop" class="form-label" id="event_content">일정 <span class="text-danger">*</span></label>
+							<input type="text" id="nameBackdrop" class="form-control" placeholder="일정 입력해주세요.">
+						</div>
+						<div class="row">
+							<div class="col mb-0">
+								<label for="dobBackdrop" class="form-label" id="event_start_date">시작일 <span class="text-danger">*</span></label>
+								<input type="date" id="dobBackdrop" class="form-control">
+							</div>
+							<div class="col mb-0">
+								<label for="dobBackdrop" class="form-label" id="event_end_date">마감일 - <small class="text-muted">선택사항</small></label>
+								<input type="date" id="dobBackdrop" class="form-control">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col mb-3">
+								<label for="nameBackdrop" class="form-label" id="event_color">색상 </label>
+								<input type="color" id="nameBackdrop" class="form-control" value="#3788d8">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary" id="addEvent">추가</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<script th:src="@{/assets/vendor/js/bootstrap.js}"></script>
+	
+</body>
+</html>
